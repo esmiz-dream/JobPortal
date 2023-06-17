@@ -18,3 +18,6 @@ buildNumber.properties
 
 #adminlte files
 adminlte/
+
+#attachment folder which used to collect images and file attachment 
+attachment/
