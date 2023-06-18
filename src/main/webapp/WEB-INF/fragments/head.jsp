@@ -10,12 +10,11 @@
   <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="adminlte/css/adminlte.min.css">
-   <!-- Font Awesome -->
-  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <link rel="stylesheet" href="adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- Toastr -->
-  <link rel="stylesheet" href="adminlte/plugins/toastr/toastr.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/toastr/toastr.css">
+  <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css?v=3.2.0">
   <!-- Theme style -->
 </head>

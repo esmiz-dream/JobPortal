@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" session="false"%>
+         pageEncoding="UTF-8" session="false"%>
 <!-- jQuery -->
 <script src="adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -7,6 +7,6 @@
 <!-- AdminLTE App -->
 <script src="adminlte/js/adminlte.min.js"></script>
 <script src="adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="adminlte/plugins/toastr/toastr.min.js"></script>
-
+<script src="adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
 

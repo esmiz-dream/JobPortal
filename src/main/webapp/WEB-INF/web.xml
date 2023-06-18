@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-   version="6.0">
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <filter>
+        <filter-name>AdminAddUserValidation</filter-name>
+        <filter-class>com.esmizdream.futurejobs.formvalidation.AdminAddUserValidation</filter-class>
+    </filter>
+    <filter>
+        <filter-name>EditAdminValidation</filter-name>
+        <filter-class>com.esmizdream.futurejobs.formvalidation.EditAdminValidation</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>EditAdminValidation</filter-name>
+        <url-pattern>/EditAdmin</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>AdminAddUserValidation</filter-name>
+        <url-pattern>/Admin</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.admin.servlet.Admin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditAdmin</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.admin.servlet.EditAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.AddEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendAdmin</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.admin.servlet.SuspendAdmin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAdmin</servlet-name>
+        <url-pattern>/EditAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddEmployer</servlet-name>
+        <url-pattern>/AddEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendAdmin</servlet-name>
+        <url-pattern>/SuspendAdmin</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
