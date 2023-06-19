@@ -36,6 +36,14 @@
         <servlet-name>ViewEmployer</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.employer.servlet.ViewEmployer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SuspendEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.SuspendEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.EditEmployer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>ViewEmployer</servlet-name>
         <url-pattern>/ViewEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendEmployer</servlet-name>
+        <url-pattern>/SuspendEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditEmployer</servlet-name>
+        <url-pattern>/EditEmployer</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

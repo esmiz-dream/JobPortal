@@ -27,6 +27,7 @@ public class EmployerDAO {
     private static EmployerDAO employerdao;
     private static int status = 0;
     private static String query = "";
+    private static EmployerBean employer;
 
     private EmployerDAO() {
         jdbc.getInstance();
@@ -92,29 +93,45 @@ public class EmployerDAO {
         return employers;
     }
 
-    public static int fetchById(int id) {
+    public static EmployerBean fetchById(int id) {
         conn = jdbc.getConnection();
         query = "select * from employer where id=?";
         try {
             pss = conn.prepareStatement(query);
             pss.setInt(1, id);
-            status = pss.executeUpdate();
+            rs = pss.executeQuery();
+            rs.next();
+            employer = EmployerBean.getInstance();
+            employer.setId(rs.getInt("id"));
+            employer.setEmail(rs.getString("email"));
+            employer.setPassword(rs.getString("password"));
+            employer.setCompany_name(rs.getString("company_name"));
+            employer.setTin_number(rs.getString("tin_number"));
+            employer.setPhone(rs.getString("phone"));
+            employer.setContact_name(rs.getString("contact_name"));
+            
+            employer.setLogo(rs.getString("logo"));
+            employer.setStatus(rs.getString("status"));
+            employer.setCreated_at(rs.getTimestamp("created_at"));
+
         } catch (SQLException ex) {
             Logger.getLogger(EmployerDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return status;
+        return employer;
     }
 
     public static int update(String table, int id, List<String> columns, List<String> values) {
         conn = jdbc.getConnection();
+        int i=0;
         try {
 
             for (String column : columns) {
                 query = "update " + table + " set " + column + "=? where id=?";
                 pss = conn.prepareStatement(query);
-                pss.setString(1, column);
+                pss.setString(1, values.get(i));
                 pss.setInt(2, id);
                 status = pss.executeUpdate();
+                i++;
             }
         } catch (SQLException ex) {
             Logger.getLogger(EmployerDAO.class.getName()).log(Level.SEVERE, null, ex);
