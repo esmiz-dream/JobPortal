@@ -8,12 +8,10 @@
         <filter-name>EditAdminValidation</filter-name>
         <filter-class>com.esmizdream.futurejobs.formvalidation.EditAdminValidation</filter-class>
     </filter>
-    
     <filter-mapping>
         <filter-name>EditAdminValidation</filter-name>
         <url-pattern>/EditAdmin</url-pattern>
     </filter-mapping>
-    
     <filter-mapping>
         <filter-name>AdminAddUserValidation</filter-name>
         <url-pattern>/Admin</url-pattern>
@@ -34,6 +32,10 @@
         <servlet-name>SuspendAdmin</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.admin.servlet.SuspendAdmin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.ViewEmployer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
@@ -49,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>SuspendAdmin</servlet-name>
         <url-pattern>/SuspendAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewEmployer</servlet-name>
+        <url-pattern>/ViewEmployer</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
