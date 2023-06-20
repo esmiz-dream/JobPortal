@@ -12,6 +12,7 @@
         <div class="card-header">
             <h3 class="card-title">Add Administrator</h3>
         </div>
+        
         <!-- /.card-header -->
         <!-- form start -->
         <form action="Admin" method="POST" enctype="multipart/form-data">
@@ -22,6 +23,7 @@
                                                                placeholder="Enter name" >
                     <span id="nameinput" style="color:red; padding-left:20px;"> ${errName}</span>
                 </div>
+                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label> <input
                         type="text" class="form-control" id="exampleInputEmail1"

@@ -199,6 +199,10 @@ with font-awesome or any other icon font library -->
                             <a href="ViewEmployer" class="nav-link">  
                                 <p>Employer</p>
                             </a></li>
+                        <li class="nav-item"><a href="ViewJobCategory"
+                                                class="nav-link">  
+                                <p>Job Category</p>
+                            </a></li>
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link">  
                                 <p>Role Management</p>
@@ -207,10 +211,7 @@ with font-awesome or any other icon font library -->
                                                 class="nav-link">  
                                 <p>Permition Management</p>
                             </a></li>
-                        <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link">  
-                                <p>Job Category</p>
-                            </a></li>
+
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link">  
                                 <p>New Job</p>

@@ -83,6 +83,8 @@ public class EmployerDAO {
                 employers.get(i).setLogo(rs.getString("logo"));
                 employers.get(i).setStatus(rs.getString("status"));
                 employers.get(i).setCreated_at(rs.getTimestamp("created_at"));
+                employers.get(i).setLast_modified(rs.getTimestamp("last_modified"));
+
                 System.out.println(rs.getString("contact_name"));
                 i++;
             }
@@ -109,10 +111,11 @@ public class EmployerDAO {
             employer.setTin_number(rs.getString("tin_number"));
             employer.setPhone(rs.getString("phone"));
             employer.setContact_name(rs.getString("contact_name"));
-            
+
             employer.setLogo(rs.getString("logo"));
             employer.setStatus(rs.getString("status"));
             employer.setCreated_at(rs.getTimestamp("created_at"));
+            employer.setLast_modified(rs.getTimestamp("last_modified"));
 
         } catch (SQLException ex) {
             Logger.getLogger(EmployerDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -122,7 +125,7 @@ public class EmployerDAO {
 
     public static int update(String table, int id, List<String> columns, List<String> values) {
         conn = jdbc.getConnection();
-        int i=0;
+        int i = 0;
         try {
 
             for (String column : columns) {

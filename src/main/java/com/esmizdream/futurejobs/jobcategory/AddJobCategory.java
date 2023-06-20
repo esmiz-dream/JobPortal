@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.esmizdream.futurejobs.employer.servlet;
+package com.esmizdream.futurejobs.jobcategory;
 
-import com.esmizdream.futurejobs.model.EmployerDAO;
+import com.esmizdream.futurejobs.model.JobCategoryDAO;
+import com.esmizdream.futurejobs.resources.DateTime;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,22 +13,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author hp
  */
-public class ViewEmployer extends HttpServlet {
-
-    private EmployerBean empbean;
-    private EmployerDAO empdao;
-    private ResultSet rs;
+public class AddJobCategory extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,10 +28,10 @@ public class ViewEmployer extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ViewEmployer</title>");
+            out.println("<title>Servlet AddJobCategory</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ViewEmployer at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddJobCategory at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -49,21 +40,30 @@ public class ViewEmployer extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        empdao = EmployerDAO.getInstance();
-        List<EmployerBean> empbean = new ArrayList<EmployerBean>();
-        empbean = empdao.fetchAll();
-
-        request.setAttribute("employers", empbean);
-        RequestDispatcher dspt = request.getRequestDispatcher("ViewEmployer.jsp");
-        dspt.forward(request, response);
-//        response.sendRedirect("ViewEmployer.jsp");
-
+        response.sendRedirect("AddJobCategory.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        JobCategoryBean category = JobCategoryBean.getInstance();
+        JobCategoryDAO categorydao = JobCategoryDAO.getInstance();
+        DateTime time = DateTime.getInstance();
+
+        category.setTitle(request.getParameter("title"));
+        System.out.println(request.getParameter("title"));
+        category.setStatus("suspended");
+        category.setCreated_at(time.getSqlDateTime());
+
+        if (categorydao.insert(category) == 1) {
+            request.setAttribute("newcategory", "New Job Category Successfully Added");
+        } else {
+            request.setAttribute("newcategory", "New Job Category Successfully Added");
+        }
+//        RequestDispatcher dispatch=request.getRequestDispatcher(request.getContextPath() "/ViewJobCategory");
+//        dispatch.forward(request, response);
+        response.sendRedirect(request.getContextPath()+"/ViewJobCategory");
+
     }
 
     @Override

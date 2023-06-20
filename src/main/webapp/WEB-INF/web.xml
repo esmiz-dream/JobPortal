@@ -44,6 +44,18 @@
         <servlet-name>EditEmployer</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.employer.servlet.EditEmployer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.AddJobCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.ViewJobCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.SuspendJobCategory</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
@@ -71,6 +83,18 @@
     <servlet-mapping>
         <servlet-name>EditEmployer</servlet-name>
         <url-pattern>/EditEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddJobCategory</servlet-name>
+        <url-pattern>/AddJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewJobCategory</servlet-name>
+        <url-pattern>/ViewJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendJobCategory</servlet-name>
+        <url-pattern>/SuspendJobCategory</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
