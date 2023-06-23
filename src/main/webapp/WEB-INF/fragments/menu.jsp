@@ -195,6 +195,14 @@ with font-awesome or any other icon font library -->
                                 </a>
                             </form>
                         </li>
+                        <li class="nav-item">
+                            <a href="ViewEmployer" class="nav-link">  
+                                <p>Employer</p>
+                            </a></li>
+                        <li class="nav-item"><a href="ViewJobCategory"
+                                                class="nav-link">  
+                                <p>Job Category</p>
+                            </a></li>
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link">  
                                 <p>Role Management</p>
@@ -203,18 +211,12 @@ with font-awesome or any other icon font library -->
                                                 class="nav-link">  
                                 <p>Permition Management</p>
                             </a></li>
-                        <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link">  
-                                <p>Job Category</p>
-                            </a></li>
+
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link">  
                                 <p>New Job</p>
                             </a></li> 
-                        <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link">  
-                                <p>Employer</p>
-                            </a></li>
+
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link">  
                                 <p>Job Seeker</p>
@@ -258,6 +260,8 @@ with font-awesome or any other icon font library -->
                     </ul>
                 </li>
 
+
+                <!--employer portal--> 
                 <li class="nav-item"><a href="#"
                                         class="nav-link"> <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -266,27 +270,32 @@ with font-awesome or any other icon font library -->
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item"><a href="./adduserform.jsp"
-                                                class="nav-link"> <i class="fas fa-user-plus"></i>
-                                <p>Employer Registration</p>
+                                                class="nav-link"> 
+                                <p>Account Management</p>
                             </a>
                         </li>
                         <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link"> <i class="fas fa-users nav-icon"></i>
+                                                class="nav-link">
+                                <!--<i class="fas fa-users nav-icon"></i>-->
                                 <p>My Account</p>
                             </a>
                         </li>
                         <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link"> <i class="fas fa-users nav-icon"></i>
+                                                class="nav-link">
+                                <!--<i class="fas fa-users nav-icon"></i>-->
                                 <p>Post Management</p>
                             </a>
                         </li>
                         <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link"> <i class="fas fa-users nav-icon"></i>
+                                                class="nav-link"> 
+                                <!--<i class="fas fa-users nav-icon"></i>-->
                                 <p>Job Applicant</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+
                 <!-- for employer to manage sub account-->
                 <li class="nav-item"><a href="#"
                                         class="nav-link"> <i class="nav-icon fas fa-user"></i>
@@ -312,6 +321,7 @@ with font-awesome or any other icon font library -->
                         </li>
                     </ul>
                 </li>
+
 
                 <!--employer sub-account portal-->
                 <li class="nav-item"><a href="#"
@@ -350,6 +360,8 @@ with font-awesome or any other icon font library -->
 
     document.getElementById("AdminAccountManagementLink").addEventListener("click", function () {
         document.getElementById("AdminAccountManagement").submit();
-
+    });
+    document.getElementById("EmployerAccountManagementLink").addEventListener("click", function () {
+        document.getElementById("EmployerAccountManagement").submit();
     });
 </script>

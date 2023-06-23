@@ -8,12 +8,10 @@
         <filter-name>EditAdminValidation</filter-name>
         <filter-class>com.esmizdream.futurejobs.formvalidation.EditAdminValidation</filter-class>
     </filter>
-    
     <filter-mapping>
         <filter-name>EditAdminValidation</filter-name>
         <url-pattern>/EditAdmin</url-pattern>
     </filter-mapping>
-    
     <filter-mapping>
         <filter-name>AdminAddUserValidation</filter-name>
         <url-pattern>/Admin</url-pattern>
@@ -34,6 +32,50 @@
         <servlet-name>SuspendAdmin</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.admin.servlet.SuspendAdmin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.ViewEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.SuspendEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.EditEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.AddJobCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.ViewJobCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendJobCategory</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.jobcategory.SuspendJobCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.AddJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.ViewJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.EditJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.SuspendJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JobBean</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.JobBean</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
@@ -49,6 +91,50 @@
     <servlet-mapping>
         <servlet-name>SuspendAdmin</servlet-name>
         <url-pattern>/SuspendAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewEmployer</servlet-name>
+        <url-pattern>/ViewEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendEmployer</servlet-name>
+        <url-pattern>/SuspendEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditEmployer</servlet-name>
+        <url-pattern>/EditEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddJobCategory</servlet-name>
+        <url-pattern>/AddJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewJobCategory</servlet-name>
+        <url-pattern>/ViewJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendJobCategory</servlet-name>
+        <url-pattern>/SuspendJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddJob</servlet-name>
+        <url-pattern>/AddJob</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewJob</servlet-name>
+        <url-pattern>/ViewJob</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditJob</servlet-name>
+        <url-pattern>/EditJob</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendJob</servlet-name>
+        <url-pattern>/SuspendJob</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JobBean</servlet-name>
+        <url-pattern>/JobBean</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -37,10 +37,11 @@ public class FileDao {
         return filedao;
     }
 //    not used right now need further reserach
-    public static BufferedImage readImage(String path, String user_type){
-    
+
+    public static BufferedImage readImage(String path, String user_type) {
+
         try {
-             pic=ImageIO.read(new File(dir_path.concat("/").concat(user_type)));
+            pic = ImageIO.read(new File(dir_path.concat("/").concat(user_type)));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -54,7 +55,6 @@ public class FileDao {
         if (!file_path.exists()) {
             file_path.mkdirs();
         }
-System.out.println(file_path);
         if (file != null && file_path.exists()) {
             String upload_path = file_path.getAbsolutePath().concat("\\").concat(file.getSubmittedFileName());
             fout = new FileOutputStream(upload_path);
@@ -68,7 +68,7 @@ System.out.println(file_path);
         return false;
     }
 
-    public static boolean deleteFile(String  file_name, String user_type) {
+    public static boolean deleteFile(String file_name, String user_type) {
         File file_path = new File(dir_path);
         String exact_path = dir_path.concat("/").concat(user_type).concat("/").concat(file_name);
         if (file_name != null && file_path.exists()) {
@@ -80,7 +80,6 @@ System.out.println(file_path);
 
     public static boolean replaceFile(Part file_new, String old_file_path, AdminBean adminbean, String user_type) {
 //        deleteFile(file_new, user_type);
-         
 
         return false;
     }
