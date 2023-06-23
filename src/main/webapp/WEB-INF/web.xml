@@ -56,6 +56,42 @@
         <servlet-name>SuspendJobCategory</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.jobcategory.SuspendJobCategory</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.AddJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetaileJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.DetaileJob</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddJob</servlet-name>
+        <url-pattern>/AddJob</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.ViewJob</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewJob</servlet-name>
+        <url-pattern>/ViewJob</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.EditJob</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditJob</servlet-name>
+        <url-pattern>/EditJob</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SuspendJob</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.job.servlet.SuspendJob</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuspendJob</servlet-name>
+        <url-pattern>/SuspendJob</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
@@ -95,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>SuspendJobCategory</servlet-name>
         <url-pattern>/SuspendJobCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetaileJob</servlet-name>
+        <url-pattern>/DetaileJob</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
