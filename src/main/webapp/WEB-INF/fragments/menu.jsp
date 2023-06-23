@@ -299,20 +299,21 @@ with font-awesome or any other icon font library -->
                 <li class="nav-item"><a href="#"
                                         class="nav-link"> <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Account Management <i class="right fas fa-angle-left"></i>
+                            Account Management for Employer<i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item"><a href="ViewSubEmployer"
+                                                class="nav-link"> <i class="fas fa-users nav-icon"></i>
+                                <p>Account Management</p>
+                            </a>
+                        </li>
                         <li class="nav-item"><a href="./adduserform.jsp"
                                                 class="nav-link"> <i class="fas fa-user-plus"></i>
                                 <p>New Account</p>
                             </a>
                         </li>
-                        <li class="nav-item"><a href="./viewuserform.jsp"
-                                                class="nav-link"> <i class="fas fa-users nav-icon"></i>
-                                <p>Account Management</p>
-                            </a>
-                        </li>
+
                         <li class="nav-item"><a href="./viewuserform.jsp"
                                                 class="nav-link"> <i class="fas fa-users nav-icon"></i>
                                 <p>Account Previlage</p>

@@ -16,6 +16,7 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="adminlte/plugins/toastr/toastr.css">
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css?v=3.2.0">
+
     <!-- Theme style -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -47,4 +48,5 @@
 
     <link rel="stylesheet" href="adminlte/plugins/simplemde/simplemde.min.css">
     
+ 
 </head>
