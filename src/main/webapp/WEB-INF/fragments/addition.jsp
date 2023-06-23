@@ -10,3 +10,4 @@
 <script src="adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
 
+<script src="adminlte/plugins/select2/js/select2.full.min.js"></script>
