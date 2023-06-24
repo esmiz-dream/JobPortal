@@ -4,12 +4,16 @@
  */
 package com.esmizdream.futurejobs.employer.servlet;
 
+import com.esmizdream.futurejobs.model.SubEmployerDAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -38,7 +42,7 @@ public class ViewSubEmployer extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("ViewSubEmployer.jsp");
+        doPost(request, response);
     }
 
    
@@ -46,7 +50,12 @@ public class ViewSubEmployer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        //    id, employer, name, email, password, account_type, department_name, status, created_at, last_modified
-
+     SubEmployerDAO subdao=SubEmployerDAO.getInstance();
+     List<SubEmployerBean> sub_employer=new ArrayList<SubEmployerBean>();
+     sub_employer=subdao.fetchAll();
+     request.setAttribute("sub_employer", sub_employer);
+     RequestDispatcher dispatch=request.getRequestDispatcher("ViewSubEmployer.jsp");
+     dispatch.forward(request, response);
     }
 
      

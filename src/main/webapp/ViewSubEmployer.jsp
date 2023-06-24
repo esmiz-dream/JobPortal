@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.esmizdream.futurejobs.jobcategory.JobCategoryBean"%>
+<%@page import="com.esmizdream.futurejobs.employer.servlet.SubEmployerBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" session="false" %>
 <jsp:include page="/WEB-INF/fragments/dashbord.jsp" />
@@ -15,7 +15,7 @@
 <div class="content-wrapper" style="min-height: 600.4px;">
     <div class="card mx-auto" style="width: 90%">
         <div class="card-header">
-            <h3 class="card-title">Sub Accounts</h3><br><br>
+            <h3 class="card-title">Sub User Accounts</h3><br><br>
 
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 250px;">
@@ -41,35 +41,37 @@
                     <tr>
                         <th style="width: 10px">Id</th>
                         <!--email, password, company_name, tin_number, phone, contact_name, logo, status, created_at-->
-                        <td>Title</td>  
-                        <td>Created Jobs</td>      
+                        <td>Department</td>  
+                        <td>Account Role</td>   
+                        <td>Department Head</td>      
                         <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
                     <% 
-                 List<JobCategoryBean> categories=(ArrayList<JobCategoryBean>)request.getAttribute("categories");
+                 List<SubEmployerBean> sub_accounts=(ArrayList<SubEmployerBean>)request.getAttribute("sub_employer");
                  int i=0;
-                 for(JobCategoryBean category : categories)
+                 for(SubEmployerBean accounts : sub_accounts)
                  {
                  i++;
                     %>
 
                     <tr>
                         <td><%=i%></td>        
-                        <td><%=category.getTitle()%></td>  
-                        <td>under construction</td>      
+                        <td><%=accounts.getDepartment_name()%></td>  
+                        <td><%=accounts.getAccount_type()%></td>      
+                        <td><%=accounts.getName()%></td>      
 
                         <td> 
-                            <a href="EditJobCategory?id=<%=category.getId()%>"><i
+                            <a href="EditJobCategory?id=<%=accounts.getId()%>"><i
                                     class="fas fa-edit"></i></a>
-                                <c:set var="status" value="<%=category.getStatus()%>" />
+                                <c:set var="status" value="<%=accounts.getStatus()%>" />
                                 <c:choose>
                                     <c:when test="${status eq 'active'}" >
-                                    <a href="SuspendJobCategory?id=<%=category.getId()%>&action=suspend"  ><span >suspend</span></a>
+                                    <a href="SuspendSubEmployer?id=<%=accounts.getId()%>&action=suspend"  ><span >suspend</span></a>
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="SuspendJobCategory?id=<%=category.getId()%>&action=unsuspend"  ><span style="color:red;">activate</span></a>
+                                    <a href="SuspendSubEmployer?id=<%=accounts.getId()%>&action=unsuspend"  ><span style="color:red;">activate</span></a>
                                 </c:otherwise>
                             </c:choose>
                         </td>

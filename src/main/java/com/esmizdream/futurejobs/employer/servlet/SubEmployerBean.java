@@ -14,6 +14,8 @@ public class SubEmployerBean {
 //    id, employer, name, email, password, account_type, department_name, status, created_at, last_modified
     private int id;
     private int employer;
+    private String employer_name;
+    private String name;
     private String email;
     private String password;
     private String account_type;
@@ -21,7 +23,24 @@ public class SubEmployerBean {
     private String status;
     private Timestamp created_at;
     private Timestamp last_modified;
+    private SubEmployerBean subbean;
+   
+    public String getEmployer_name() {
+        return employer_name;
+    }
 
+    public void setEmployer_name(String employer_name) {
+        this.employer_name = employer_name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public int getId() {
         return id;
     }
