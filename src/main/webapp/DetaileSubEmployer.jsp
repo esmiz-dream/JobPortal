@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ViewSubEmployer
-    Created on : Jun 23, 2023, 4:09:23 PM
+    Document   : DetaileSubEmployer
+    Created on : Jun 24, 2023, 6:07:45 PM
     Author     : hp
 --%>
 
@@ -42,8 +42,6 @@
                         <th style="width: 10px">Id</th>
                         <!--email, password, company_name, tin_number, phone, contact_name, logo, status, created_at-->
                         <td>Department</td>  
-                        <td>Email</td>  
-                        <td>Account Type</td>  
                         <td>Account Role</td>   
                         <td>Department Head</td>      
                         <td>Action</td>
@@ -60,16 +58,13 @@
 
                     <tr>
                         <td><%=i%></td>        
-                        <td><%=accounts.getDepartment_name()%></td> 
-                        <td><%=accounts.getEmail()%></td>      
-                        <td><%=accounts.getAccount_type()%></td>      
+                        <td><%=accounts.getDepartment_name()%></td>  
                         <td><%=accounts.getAccount_type()%></td>      
                         <td><%=accounts.getName()%></td>      
 
                         <td style="display: flex; column-gap: 5px;">
-
-<!--                            <a href="DetaileSubEmployer.jsp"  ><i
-                                    class="fas fa-eye"></i></a>-->
+                            <a href="DetailSubEmployer?id=<%=accounts.getId()%>"><i
+                                    class="fas fa-eye"></i></a>
                             <a href="EditSubEmployer?id=<%=accounts.getId()%>"><i
                                     class="fas fa-edit"></i></a>
                                 <c:set var="status" value="<%=accounts.getStatus()%>" />
@@ -91,87 +86,29 @@
                 </tbody>
             </table>
 
-            <!--            <button type="button" class="btn btn-danger swalDefaultSuccess">
+                        <button type="button" class="btn btn-danger swalDefaultSuccess">
                             Launch Success Toast
                         </button>
             
                         <button type="button" class="btn btn-success toastrDefaultSuccess">
                             Launch Success Toast
-                        </button>-->
-
+                        </button>
         </div>
         <!-- /.card-body -->
     </div>
 </div>
 
-<div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="modal-sm">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Account Detaile</h4>
+                <h4 class="modal-title">Small Modal</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <h1 id = "modal_body"> </h1>
-                <div class="col-12">
-                    <h4></h4>
-                    <div class="post">
-                        <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                            <span class="username">
-                                <a href="#">Jonathan Burke Jr.</a>
-                            </span>
-                            <span class="description">Shared publicly - 7:45 PM today</span>
-                        </div>
-
-                        <p>
-                            Lorem ipsum represents a long-held tradition for designers,
-                            typographers and the like. Some people hate it and argue for
-                            its demise, but others ignore.
-                        </p>
-                        <p>
-                            <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a>
-                        </p>
-                    </div>
-                    <div class="post clearfix">
-                        <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
-                            <span class="username">
-                                <a href="#">Sarah Ross</a>
-                            </span>
-                            <span class="description">Sent you a message - 3 days ago</span>
-                        </div>
-
-                        <p>
-                            Lorem ipsum represents a long-held tradition for designers,
-                            typographers and the like. Some people hate it and argue for
-                            its demise, but others ignore.
-                        </p>
-                        <p>
-                            <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 2</a>
-                        </p>
-                    </div>
-                    <div class="post">
-                        <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                            <span class="username">
-                                <a href="#">Jonathan Burke Jr.</a>
-                            </span>
-                            <span class="description">Shared publicly - 5 days ago</span>
-                        </div>
-
-                        <p>
-                            Lorem ipsum represents a long-held tradition for designers,
-                            typographers and the like. Some people hate it and argue for
-                            its demise, but others ignore.
-                        </p>
-                        <p>
-                            <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v1</a>
-                        </p>
-                    </div>
-                </div>
+                <p>One fine body&hellip;</p>
             </div>
 
         </div>
@@ -181,28 +118,7 @@
 <!-- Main Footer -->
 <jsp:include page="/WEB-INF/fragments/footer.jsp" />
 <script src="adminlte/plugins/toastr/toastr.js"></script>
-<script type = "text/javascript">
-    $("#submit").click(function () {
-
-        var str = "You Have Entered "
-                + "Name: "
-                + "Cass: "
-                + " and Marks: ";
-        $("#modal_body").html(str);
-    });
-</script> 
 <script>
-
-    $("#submit").click(function () {
-        var name = $("#name").val();
-        var cass = $("#cass").val();
-        var marks = $("#marks").val();
-        var str = "You Have Entered "
-                + "Name: "
-                + "Cass: "
-                + " and Marks: ";
-        $("#modal_body").html(str);
-    });
     $(function () {
         var Toast = Swal.mixin({
             toast: true,

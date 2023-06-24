@@ -64,7 +64,7 @@ public class SubEmployerDAO {
     public static List<SubEmployerBean> fetchAll() {
         List<SubEmployerBean> employers = new ArrayList<SubEmployerBean>();
         conn = jdbc.getConnection();
-        query = "select sub_employer.*, employer.company_name  from sub_employer "
+        query = "select sub_employer.*, sub_employer.id emp_id, employer.company_name  from sub_employer "
                 + "inner join employer on sub_employer.employer=employer.id";
         int i = 0;
         try {
@@ -72,8 +72,8 @@ public class SubEmployerDAO {
             rs = pss.executeQuery();
             while (rs.next()) {
                 employers.add(new SubEmployerBean());
-                employers.get(i).setId(rs.getInt("id"));
-                employers.get(i).setId(rs.getInt("employer"));
+                employers.get(i).setId(rs.getInt("emp_id"));
+                employers.get(i).setEmployer(rs.getInt("employer"));
                 employers.get(i).setEmployer_name(rs.getString("company_name"));
                 employers.get(i).setName(rs.getString("name"));
                 employers.get(i).setEmail(rs.getString("email"));
@@ -94,8 +94,10 @@ public class SubEmployerDAO {
 
     public static SubEmployerBean fetchById(int id) {
         conn = jdbc.getConnection();
-        query = "select sub_employer.*, employer.company_name from sub_employer "
+        query = "select sub_employer.*, sub_employer.id emp_id, employer.company_name from sub_employer "
                 + "inner join employer on sub_employer.employer=employer.id where sub_employer.id=?";
+
+        SubEmployerBean sub_employer = new SubEmployerBean();
         try {
             pss = conn.prepareStatement(query);
             pss.setInt(1, id);
@@ -103,12 +105,10 @@ public class SubEmployerDAO {
             rs.next();
             //    id, employer, name, email, password, account_type, department_name, status, created_at, last_modified
 
-            SubEmployerBean sub_employer = new SubEmployerBean();
-            sub_employer.setId(rs.getInt("id"));
+            sub_employer.setId(rs.getInt("emp_id"));
             sub_employer.setEmployer(rs.getInt("employer"));
             sub_employer.setEmployer_name(rs.getString("company_name"));
             sub_employer.setName(rs.getString("name"));
-
             sub_employer.setEmail(rs.getString("email"));
             sub_employer.setPassword(rs.getString("password"));
             sub_employer.setAccount_type(rs.getString("account_type"));
@@ -116,7 +116,6 @@ public class SubEmployerDAO {
             sub_employer.setStatus(rs.getString("status"));
             sub_employer.setCreated_at(rs.getTimestamp("created_at"));
             sub_employer.setLast_modified(rs.getTimestamp("last_modified"));
-
         } catch (SQLException ex) {
             Logger.getLogger(EmployerDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -141,4 +140,21 @@ public class SubEmployerDAO {
         }
         return status;
     }
+
+    public static int deleteAccount(int id) {
+        conn = jdbc.getConnection();
+        int i = 0;
+        try {
+
+            query = "delete  from sub_employer where id=?";
+            pss = conn.prepareStatement(query);
+            pss.setInt(1, id);
+            status = pss.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployerDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+
 }

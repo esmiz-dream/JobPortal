@@ -64,7 +64,6 @@
         <servlet-name>DetaileJob</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.job.servlet.DetaileJob</servlet-class>
     </servlet>
- 
     <servlet>
         <servlet-name>JobSeeker</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.jobseeker.servlet.JobSeeker</servlet-class>
@@ -77,7 +76,18 @@
         <servlet-name>ViewSubEmployer</servlet-name>
         <servlet-class>com.esmizdream.futurejobs.employer.servlet.ViewSubEmployer</servlet-class>
     </servlet>
- 
+    <servlet>
+        <servlet-name>DeleteSubEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.DeleteSubEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SuspendSubEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.SuspendSubEmployer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditSubEmployer</servlet-name>
+        <servlet-class>com.esmizdream.futurejobs.employer.servlet.EditSubEmployer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddJob</servlet-name>
         <url-pattern>/AddJob</url-pattern>
@@ -150,7 +160,6 @@
         <servlet-name>DetaileJob</servlet-name>
         <url-pattern>/DetaileJob</url-pattern>
     </servlet-mapping>
- 
     <servlet-mapping>
         <servlet-name>JobSeeker</servlet-name>
         <url-pattern>/JobSeeker</url-pattern>
@@ -163,7 +172,18 @@
         <servlet-name>ViewSubEmployer</servlet-name>
         <url-pattern>/ViewSubEmployer</url-pattern>
     </servlet-mapping>
- 
+    <servlet-mapping>
+        <servlet-name>DeleteSubEmployer</servlet-name>
+        <url-pattern>/DeleteSubEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuspendSubEmployer</servlet-name>
+        <url-pattern>/SuspendSubEmployer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSubEmployer</servlet-name>
+        <url-pattern>/EditSubEmployer</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

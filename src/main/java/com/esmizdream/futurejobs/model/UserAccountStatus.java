@@ -36,6 +36,7 @@ public class UserAccountStatus {
         try {
             pss = conn.prepareStatement("update " + table + " set status='suspended' where id=" + id);
             status = pss.executeUpdate();
+            System.out.println("suspended="+status);
 
         } catch (SQLException ex) {
             Logger.getLogger(UserAccountStatus.class.getName()).log(Level.SEVERE, null, ex);
